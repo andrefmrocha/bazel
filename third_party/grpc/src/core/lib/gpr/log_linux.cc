@@ -40,7 +40,7 @@
 #include <time.h>
 #include <unistd.h>
 
-static long gettid(void) { return syscall(__NR_gettid); }
+
 
 void gpr_log(const char* file, int line, gpr_log_severity severity,
              const char* format, ...) {

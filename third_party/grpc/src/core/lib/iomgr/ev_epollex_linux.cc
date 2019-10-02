@@ -1149,10 +1149,6 @@ static void end_worker(grpc_pollset* pollset, grpc_pollset_worker* worker,
   gpr_atm_no_barrier_fetch_add(&pollset->worker_count, -1);
 }
 
-#ifndef NDEBUG
-static long gettid(void) { return syscall(__NR_gettid); }
-#endif
-
 /* pollset->mu lock must be held by the caller before calling this.
    The function pollset_work() may temporarily release the lock (pollset->po.mu)
    during the course of its execution but it will always re-acquire the lock and
