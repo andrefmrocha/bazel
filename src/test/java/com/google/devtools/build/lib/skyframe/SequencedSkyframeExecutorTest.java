@@ -1211,6 +1211,12 @@ public final class SequencedSkyframeExecutorTest extends BuildViewTestCase {
       return ImmutableList.of();
     }
 
+    @Nullable
+    @Override
+    public Artifact getDiagnostics() {
+      return null;
+    }
+
     @Override
     public NestedSet<Artifact> getInputFilesForExtraAction(
         ActionExecutionContext actionExecutionContext) {
